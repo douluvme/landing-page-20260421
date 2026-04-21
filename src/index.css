@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Minimal light (default) ────────────────────────────────── */
+:root {
+  --bg:            #f8fafc;
+  --bg-card:       #ffffff;
+  --bg-subtle:     #f1f5f9;
+  --border:        #e2e8f0;
+  --text-primary:  #1e293b;
+  --text-secondary:#64748b;
+  --text-muted:    #cbd5e1;
+  --accent:        #f97316;
+  --skeleton:      #e2e8f0;
+  --font:          system-ui, 'Segoe UI', Roboto, sans-serif;
+  --radius:        0.75rem;
+}
+
+/* ── Minimal dark ───────────────────────────────────────────── */
+.dark {
+  --bg:            #0f172a;
+  --bg-card:       #1e293b;
+  --bg-subtle:     #2d3f55;
+  --border:        #334155;
+  --text-primary:  #f1f5f9;
+  --text-secondary:#94a3b8;
+  --text-muted:    #475569;
+  --accent:        #fb923c;
+  --skeleton:      #334155;
+}
+
+/* ── Terminal light ─────────────────────────────────────────── */
+.theme-terminal {
+  --bg:            #f5f0e0;
+  --bg-card:       #fafaea;
+  --bg-subtle:     #ede8d2;
+  --border:        #b8c8a0;
+  --text-primary:  #1a4e1a;
+  --text-secondary:#2a6e2a;
+  --text-muted:    #80aa80;
+  --accent:        #1a6e1a;
+  --skeleton:      #d8d0b0;
+  --font:          'Courier New', Courier, monospace;
+  --radius:        0.125rem;
+}
+
+/* ── Terminal dark ──────────────────────────────────────────── */
+.dark.theme-terminal {
+  --bg:            #0a0c0a;
+  --bg-card:       #0d110d;
+  --bg-subtle:     #111611;
+  --border:        #1a3a1a;
+  --text-primary:  #00ff41;
+  --text-secondary:#00cc33;
+  --text-muted:    #005a18;
+  --accent:        #39ff14;
+  --skeleton:      #0a1f0a;
+}
+
+/* ── Paper light ────────────────────────────────────────────── */
+.theme-paper {
+  --bg:            #f2ebe0;
+  --bg-card:       #faf6ee;
+  --bg-subtle:     #ede6d6;
+  --border:        #c8b89a;
+  --text-primary:  #2c1a0e;
+  --text-secondary:#7a5c45;
+  --text-muted:    #b8997a;
+  --accent:        #8b2500;
+  --skeleton:      #ddd4c0;
+  --font:          Georgia, 'Times New Roman', serif;
+  --radius:        0.25rem;
+}
+
+/* ── Paper dark ─────────────────────────────────────────────── */
+.dark.theme-paper {
+  --bg:            #1a1008;
+  --bg-card:       #231408;
+  --bg-subtle:     #2e1c0c;
+  --border:        #4a3020;
+  --text-primary:  #d4a574;
+  --text-secondary:#a07850;
+  --text-muted:    #604030;
+  --accent:        #e08040;
+  --skeleton:      #2e1c0c;
+}
+
+/* ── Neon light ─────────────────────────────────────────────── */
+.theme-neon {
+  --bg:            #f8f6ff;
+  --bg-card:       #ffffff;
+  --bg-subtle:     #f0ecff;
+  --border:        #d8ceff;
+  --text-primary:  #1a0044;
+  --text-secondary:#6040a0;
+  --text-muted:    #c0b0e0;
+  --accent:        #8800cc;
+  --skeleton:      #e8e0ff;
+  --font:          system-ui, 'Segoe UI', Roboto, sans-serif;
+  --radius:        0.5rem;
+}
+
+/* ── Neon dark ──────────────────────────────────────────────── */
+.dark.theme-neon {
+  --bg:            #080814;
+  --bg-card:       #0e0e22;
+  --bg-subtle:     #14143a;
+  --border:        #2a2a6a;
+  --text-primary:  #e0e0ff;
+  --text-secondary:#9090d0;
+  --text-muted:    #404080;
+  --accent:        #bf00ff;
+  --skeleton:      #14143a;
+}
+
+/* ── Glow effects (dark variants only) ─────────────────────── */
+.dark.theme-terminal .glow {
+  text-shadow: 0 0 8px currentColor, 0 0 20px currentColor;
+}
+
+.dark.theme-neon .glow {
+  text-shadow: 0 0 10px #bf00ff88, 0 0 30px #bf00ff44;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-primary);
+  transition: background-color 0.2s, color 0.2s;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100svh;
+}
